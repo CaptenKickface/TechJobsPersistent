@@ -15,7 +15,8 @@ WHERE Location = "St Louis City";
 
 --Part 3
 
-SELECT name, description
-FROM techjobs.skills
-FULL JOIN techjobs.jobskills ON techjobs.skills.Id = techjobs.jobskills.skillid
-WHERE techjobs.skills.Id = techjobs.jobskills.skillid;
+SELECT *
+FROM skills
+LEFT JOIN jobskills ON skills.Id = jobskills.SkillId
+WHERE jobskills.JobId IS NOT NULL
+ORDER BY Name ASC; 
